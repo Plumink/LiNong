@@ -34,12 +34,12 @@ export default class Home extends Component{
                 <Text style={styles.tit1}>农业</Text>
                 <Text style={styles.tit2}>小知识，帮你高效种田</Text>
                   <View style={styles.content1}>
-                    <Image source={require('../pic/bz.png')} style={styles.img1}/>
-                    <Image source={require('../pic/bz.png')} style={styles.img1}/>
+                    <Image source={require('../img/bz.png')} style={styles.img1}/>
+                    <Image source={require('../img/bz.png')} style={styles.img1}/>
                   </View>
                   <View style={styles.content1}>
-                    <Image source={require('../pic/bz.png')} style={styles.img1}/>
-                    <Image source={require('../pic/bz.png')} style={styles.img1}/>
+                    <Image source={require('../img/bz.png')} style={styles.img1}/>
+                    <Image source={require('../img/bz.png')} style={styles.img1}/>
                   </View>
               </View>
               <View style={styles.contentR}>
@@ -47,32 +47,32 @@ export default class Home extends Component{
                   <Text style={styles.tit1}>牧业</Text>
                   <Text style={styles.tit2}>小知识，帮你高效养殖</Text>
                   <View style={styles.content1}>
-                    <Image source={require('../pic/bz.png')} style={styles.img1}/>
-                    <Image source={require('../pic/bz.png')} style={styles.img1}/>
+                    <Image source={require('../img/bz.png')} style={styles.img1}/>
+                    <Image source={require('../img/bz.png')} style={styles.img1}/>
                   </View>
                 </View>
                 <View style={styles.bangshou}>
                   <Text style={styles.tit1}>找帮手</Text>
                   <Text style={styles.tit2}>大型农机帮忙</Text>
                   <View style={styles.content1}>
-                    <Image source={require('../pic/bz.png')} style={styles.img1}/>
-                    <Image source={require('../pic/bz.png')} style={styles.img1}/>
+                    <Image source={require('../img/bz.png')} style={styles.img1}/>
+                    <Image source={require('../img/bz.png')} style={styles.img1}/>
                   </View>
                 </View>
               </View>
             </View>
             <View style={styles.hangqing}>
-              <Image source={require('../pic/lb1.png')} style={styles.imgLb}/>
+              <Image source={require('../img/lb1.png')} style={styles.imgLb}/>
             </View>
             <View style={styles.guanggao}>
               <View style={styles.gg1}>
-                <Image source={require('../pic/gg.png')} style={styles.img2}/>
+                <Image source={require('../img/gg.png')} style={styles.img2}/>
                 <Text style={styles.txt2}>蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜</Text>
                 <Text style={styles.txt3}>36.00/斤</Text>
                 <Text style={styles.txt4}>江苏</Text>
               </View>
               <View style={styles.gg2}>
-                <Image source={require('../pic/gg.png')} style={styles.img2}/>
+                <Image source={require('../img/gg.png')} style={styles.img2}/>
                   <Text style={styles.txt2}>蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜</Text>
                   <Text style={styles.txt3}>36.00/斤</Text>
                   <Text style={styles.txt4}>江苏</Text>
@@ -80,13 +80,13 @@ export default class Home extends Component{
             </View>
             <View style={styles.guanggao}>
               <View style={styles.gg1}>
-                <Image source={require('../pic/gg.png')} style={styles.img2}/>
+                <Image source={require('../img/gg.png')} style={styles.img2}/>
                 <Text style={styles.txt2}>蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜</Text>
                 <Text style={styles.txt3}>36.00/斤</Text>
                 <Text style={styles.txt4}>江苏</Text>
               </View>
               <View style={styles.gg2}>
-                <Image source={require('../pic/gg.png')} style={styles.img2}/>
+                <Image source={require('../img/gg.png')} style={styles.img2}/>
                   <Text style={styles.txt2}>蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜</Text>
                   <Text style={styles.txt3}>36.00/斤</Text>
                   <Text style={styles.txt4}>江苏</Text>
