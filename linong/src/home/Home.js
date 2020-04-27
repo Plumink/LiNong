@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { View, Text, Dimensions,StyleSheet,TextInput,Image, ScrollView } from 'react-native';
+import { View, Text, Dimensions,StyleSheet,TextInput,Image, ScrollView, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 const {width, scale} = Dimensions.get('window');
@@ -31,6 +31,7 @@ export default class Home extends Component{
             </View>
             <View style={styles.content}>
               <View style={styles.nongye}>
+              <TouchableOpacity onPress={() => Actions.nonglist()}>
                 <Text style={styles.tit1}>农业</Text>
                 <Text style={styles.tit2}>小知识，帮你高效种田</Text>
                   <View style={styles.content1}>
@@ -41,8 +42,10 @@ export default class Home extends Component{
                     <Image source={require('../img/bz.png')} style={styles.img1}/>
                     <Image source={require('../img/bz.png')} style={styles.img1}/>
                   </View>
+              </TouchableOpacity>
               </View>
               <View style={styles.contentR}>
+              <TouchableOpacity onPress={() => Actions.mulist()}>
                 <View style={styles.muye}>
                   <Text style={styles.tit1}>牧业</Text>
                   <Text style={styles.tit2}>小知识，帮你高效养殖</Text>
@@ -51,13 +54,16 @@ export default class Home extends Component{
                     <Image source={require('../img/bz.png')} style={styles.img1}/>
                   </View>
                 </View>
+                </TouchableOpacity>
                 <View style={styles.bangshou}>
+                <TouchableOpacity onPress={() => Actions.helpone()}>
                   <Text style={styles.tit1}>找帮手</Text>
                   <Text style={styles.tit2}>大型农机帮忙</Text>
                   <View style={styles.content1}>
                     <Image source={require('../img/bz.png')} style={styles.img1}/>
                     <Image source={require('../img/bz.png')} style={styles.img1}/>
                   </View>
+                </TouchableOpacity>
                 </View>
               </View>
             </View>
