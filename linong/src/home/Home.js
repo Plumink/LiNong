@@ -2,6 +2,9 @@ import React,{Component} from 'react';
 import { View, Text, Dimensions,StyleSheet,TextInput,Image, ScrollView, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
+import Weather from './Weather';
+import Geolocation from './Geolocation';
+
 const {width, scale} = Dimensions.get('window');
 /** 450   2 */
 const s = width / 640;
@@ -11,12 +14,6 @@ export default class Home extends Component{
       super()
     }
 
-    // <TouchableOpacity onPress={() => Actions.publish()}>
-    //                             <Icon2 name='edit' color={'rgb(174,174,174)'} size={26} style={{marginLeft:15}}/>
-    //                             <Text style={styles.listtext}>我的发布</Text>
-    //                         </TouchableOpacity>
-
-
     render(){
         return (
           <ScrollView>
@@ -24,10 +21,11 @@ export default class Home extends Component{
             {/* 状态栏 */}
             
             <View style={styles.header}>
+              <Geolocation />
               <TextInput style={styles.inp} placeholder="请输入商品名称" placeholderTextColor="gray"/>
             </View>
-            <View>
-              <Text style={styles.weather}>天气</Text>
+            <View style={styles.weather}>
+              <Weather />
             </View>
             <View style={styles.content}>
               <View style={styles.nongye}>
@@ -108,23 +106,18 @@ const styles = StyleSheet.create({
     header:{
         height: 80*s,
         backgroundColor:'lightgreen',
-        justifyContent:'center',
-        // alignItems:'center'
+        flexDirection:'row',
+        alignItems:'center'
     },
     inp:{
-      width:380,
-      height:35,
+      width:'80%',
+      height:55*s,
       top:2,
-      left:25,
+      left:10,
       backgroundColor:'#eee',
     },
     weather:{
-      width:'90%',
-      height:90*s,
-      backgroundColor:'skyblue',
-      margin:20*s,
-      borderRadius:20*s,
-      left:10
+      alignItems:'center'
     },
     content:{
       width:'100%',
