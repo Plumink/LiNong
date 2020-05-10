@@ -4,6 +4,34 @@ import { Text, View , StyleSheet ,Dimensions, Image} from 'react-native';
 const {width} = Dimensions.get('window')
 
 export default class Zhengce extends Component{
+    constructor(){
+        super();
+        this.state={
+            test:[{Title:'aaa'}],
+            te:80
+        }
+    }
+    componentDidMount(){
+        fetch('http://175.24.100.139:8080/').then(res=>res.json())
+        .then((res)=>{
+            console.log(res)
+            this.setState({
+                test:res
+            })
+        })
+        console.log(this.state.test)
+    }
+    f = () =>{
+        console.log(2)
+        fetch('http://175.24.100.139:8080/').then(res=>res.json())
+        .then((res)=>{
+            this.setState({
+                test:res,
+                te:50
+            })
+        })
+        console.log(this.state.te)
+    }
     render() {
         return (
              <View>
