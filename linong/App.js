@@ -15,8 +15,9 @@ import MuList from './src/home/MuList';
 import Help from './src/home/Help';
 import MuDetails from './src/home/MuDetails';
 import HelpDetails from './src/home/HelpDetails';
-
-
+import Zhengce from './src/tuopin/Zhengce';
+import Jingyan from './src/tuopin/Jingyan';
+import Fupin from './src/tuopin/Fupin';
 console.disableYellowBox = true;
 const App = () => {
     return (
@@ -51,6 +52,10 @@ const App = () => {
                     >
                         <Scene key='help' hideNavBar={true} component={Tuopin}/>
                         <Scene key='two' hideNavBar={true}  component={News}/>
+                        <Scene key='three' hideNavBar={true} component={Zhengce}/>
+                        <Scene key='four' hideNavBar={true} component={Jingyan}/>
+                        <Scene key='five' hideNavBar={true} component={Fupin}/>
+                        {/* <Scene key='jy' hideNavBar={true} component={JingyanXQ}/> */}
                     </Scene>
                     <Scene 
                         key='S'
