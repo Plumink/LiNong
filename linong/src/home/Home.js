@@ -33,12 +33,12 @@ export default class Home extends Component{
                 <Text style={styles.titn}>农业</Text>
                 <Text style={styles.titn2}>小知识，帮你高效种田</Text>
                   <View style={styles.content1}>
-                    <Image source={require('../pic/bz.png')} style={styles.img1}/>
-                    <Image source={require('../pic/bz1.png')} style={styles.img1}/>
+                    <Image source={require('../img/bz.png')} style={styles.img1}/>
+                    <Image source={require('../img/bz1.png')} style={styles.img1}/>
                   </View>
                   <View style={styles.content2}>
-                    <Image source={require('../pic/bz2.png')} style={styles.img1}/>
-                    <Image source={require('../pic/bz3.png')} style={styles.img1}/>
+                    <Image source={require('../img/bz2.png')} style={styles.img1}/>
+                    <Image source={require('../img/bz3.png')} style={styles.img1}/>
                   </View>
               </View>
               <View style={styles.contentR}>
@@ -46,16 +46,16 @@ export default class Home extends Component{
                   <Text style={styles.titm}>牧业</Text>
                   <Text style={styles.tit2}>小知识，帮你高效养殖</Text>
                   <View style={styles.content3}>
-                    <Image source={require('../pic/my.png')} style={styles.img1}/>
-                    <Image source={require('../pic/my1.png')} style={styles.img1}/>
+                    <Image source={require('../img/my.png')} style={styles.img1}/>
+                    <Image source={require('../img/my1.png')} style={styles.img1}/>
                   </View>
                 </View>
                 <View style={styles.bangshou}>
                   <Text style={styles.titz}>找帮手</Text>
                   <Text style={styles.tit2}>大型农机帮忙</Text>
                   <View style={styles.content3}>
-                    <Image source={require('../pic/bs.png')} style={styles.img1}/>
-                    <Image source={require('../pic/bs1.png')} style={styles.img1}/>
+                    <Image source={require('../img/bs.png')} style={styles.img1}/>
+                    <Image source={require('../img/bs1.png')} style={styles.img1}/>
                   </View>
                 </View>
               </View>
@@ -72,10 +72,10 @@ export default class Home extends Component{
               dotStyle={styles.dotStyle}
               activeDotStyle={styles.activeDotStyle}
             >
-                <Image source={require('../pic/lb1.png')} style={styles.imgLb}/>
-                <Image source={require('../pic/lb2.png')} style={styles.imgLb}/>
-                <Image source={require('../pic/lb3.png')} style={styles.imgLb}/>
-                <Image source={require('../pic/lb4.png')} style={styles.imgLb}/>
+                <Image source={require('../img/lb1.png')} style={styles.imgLb}/>
+                <Image source={require('../img/lb2.png')} style={styles.imgLb}/>
+                <Image source={require('../img/lb3.png')} style={styles.imgLb}/>
+                <Image source={require('../img/lb4.png')} style={styles.imgLb}/>
                 
 
             </Swiper>
@@ -86,13 +86,13 @@ export default class Home extends Component{
             </View>
             <View style={styles.guanggao}>
               <View style={styles.gg1}>
-                <Image source={require('../pic/gg.png')} style={styles.img2}/>
+                <Image source={require('../img/gg.png')} style={styles.img2}/>
                 <Text style={styles.txt2}>蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜</Text>
                 <Text style={styles.txt3}>36.00/斤</Text>
                 <Text style={styles.txt4}>江苏</Text>
               </View>
               <View style={styles.gg2}>
-                <Image source={require('../pic/gg.png')} style={styles.img2}/>
+                <Image source={require('../img/gg.png')} style={styles.img2}/>
                   <Text style={styles.txt2}>蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜</Text>
                   <Text style={styles.txt3}>36.00/斤</Text>
                   <Text style={styles.txt4}>江苏</Text>
@@ -100,13 +100,13 @@ export default class Home extends Component{
             </View>
             <View style={styles.guanggao}>
               <View style={styles.gg1}>
-                <Image source={require('../pic/gg.png')} style={styles.img2}/>
+                <Image source={require('../img/gg.png')} style={styles.img2}/>
                 <Text style={styles.txt2}>蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜</Text>
                 <Text style={styles.txt3}>36.00/斤</Text>
                 <Text style={styles.txt4}>江苏</Text>
               </View>
               <View style={styles.gg2}>
-                <Image source={require('../pic/gg.png')} style={styles.img2}/>
+                <Image source={require('../img/gg.png')} style={styles.img2}/>
                   <Text style={styles.txt2}>蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜</Text>
                   <Text style={styles.txt3}>36.00/斤</Text>
                   <Text style={styles.txt4}>江苏</Text>
