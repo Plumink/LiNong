@@ -58,11 +58,8 @@ export default class Weather extends Component {
 
 const styles = StyleSheet.create({
     weather:{
-        width:'90%',
-        height:90*s,
-        backgroundColor:'skyblue',
-        margin:20*s,
-        borderRadius:15*s,
+        marginTop:3,
+        marginLeft:20,
         alignItems:'center',
         flexDirection:'row'
     },

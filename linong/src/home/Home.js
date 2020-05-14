@@ -22,7 +22,7 @@ export default class Home extends Component{
             {/* 状态栏 */}
             
             <View style={styles.header}>
-              <Geolocation />
+              <Geolocation/>
               <TextInput style={styles.inp} placeholder="请输入商品名称" placeholderTextColor="#808080"/>
             </View>
             <View style={styles.weather}>
@@ -54,7 +54,7 @@ export default class Home extends Component{
                   <Text style={styles.titz}>找帮手</Text>
                   <Text style={styles.tit2}>大型农机帮忙</Text>
                   <View style={styles.content3}>
-                    <Image source={require('../img/bs.png')} style={styles.img1}/>
+                    {/* <Image source={require('../img/bs.png')} style={styles.img1}/> */}
                     <Image source={require('../img/bs1.png')} style={styles.img1}/>
                   </View>
                 </View>
@@ -123,10 +123,12 @@ const styles = StyleSheet.create({
         height: 80*s,
         backgroundColor:'#33cc33',
         justifyContent:'center',
-        // alignItems:'center'
+        alignItems:'center',
+        flexDirection:'row',
     },
+    
     inp:{
-      width:380,
+      width:330,
       height:35,
       top:2,
       left:25,
@@ -141,7 +143,8 @@ const styles = StyleSheet.create({
       backgroundColor:'skyblue',
       margin:20*s,
       borderRadius:20*s,
-      left:10
+      left:10,
+      
     },
     content:{
       width:'100%',
