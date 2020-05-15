@@ -65,4 +65,27 @@ app.post("/postExperience",function(req,res) {
     })
 })
 
+// 首页农业标题请求
+app.get("/getNongyeTitle",function (req,res) {
+    db.query("SELECT Title FROM Nongye", function (err, data) {
+        if (err) {
+            console.log("数据库访问出错", err);
+        } else {
+            console.log(req.query.a);
+            res.send(JSON.stringify(data));
+        }
+    })
+})
+// 首页农业详细内容请求
+app.get("/getNongyeContent",function (req,res) {
+    db.query("SELECT Content FROM Nongye where NongyeID = "+req.query.id, function (err, data) {
+        if (err) {
+            console.log("数据库访问出错", err);
+        } else {
+            res.send(JSON.stringify(data));
+        }
+    })
+})
+
+
 app.listen(8081);
