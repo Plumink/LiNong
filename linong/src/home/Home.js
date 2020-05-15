@@ -29,7 +29,7 @@ export default class Home extends Component{
               <Weather />
             </View>
             <View style={styles.content}>
-              <View style={styles.nongye}>
+            <TouchableOpacity onPress={() => Actions.nonglist()} style={styles.nongye}>
                 <Text style={styles.titn}>农业</Text>
                 <Text style={styles.titn2}>小知识，帮你高效种田</Text>
                   <View style={styles.content1}>
@@ -40,24 +40,24 @@ export default class Home extends Component{
                     <Image source={require('../img/bz2.png')} style={styles.img1}/>
                     <Image source={require('../img/bz3.png')} style={styles.img1}/>
                   </View>
-              </View>
+            </TouchableOpacity>
               <View style={styles.contentR}>
-                <View style={styles.muye}>
+              <TouchableOpacity onPress={() => Actions.mulist()} style={styles.muye}>
                   <Text style={styles.titm}>牧业</Text>
                   <Text style={styles.tit2}>小知识，帮你高效养殖</Text>
                   <View style={styles.content3}>
                     <Image source={require('../img/my.png')} style={styles.img1}/>
                     <Image source={require('../img/my1.png')} style={styles.img1}/>
                   </View>
-                </View>
-                <View style={styles.bangshou}>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={() => Actions.helpone()} style={styles.bangshou}>
                   <Text style={styles.titz}>找帮手</Text>
                   <Text style={styles.tit2}>大型农机帮忙</Text>
                   <View style={styles.content3}>
-                    {/* <Image source={require('../img/bs.png')} style={styles.img1}/> */}
+                    <Image source={require('../img/bs.png')} style={styles.img1}/>
                     <Image source={require('../img/bs1.png')} style={styles.img1}/>
                   </View>
-                </View>
+              </TouchableOpacity>
               </View>
             </View>
 
