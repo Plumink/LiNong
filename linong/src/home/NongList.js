@@ -7,22 +7,30 @@ const s = width / 640;
 export default class NongList extends Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      title1: [],
+      title2: [],
+      title3: [],
+      title4: []
+    }
   }
   componentDidMount() {
-    fetch('http://175.24.100.139:8081/getPolicy')
+    fetch('http://175.24.100.139:8081/getNongyeTitle')
       .then(res => res.json())
       .then(res => {
-        console.log(res)
-        
+        console.log(res.slice(0, 30))
+        this.setState({
+          title1: res.slice(0, 30),
+          title2: res.slice(30, 60),
+          title3: res.slice(60, 90),
+          title4: res.slice(90, 120),
+        });
       });
   }
   render() {
-
     return (
       <View style={{ flex: 1, backgroundColor: 'white', width: '100%' }} hideTabBar={true}>
         {/* top */}
-        <ScrollView>
           <View style={styles.top}>
             <Icon color='black' name='left' onPress={Actions.pop} size={23} style={{ marginTop: 20 * s, marginRight: 30 * s }} />
             <View style={styles.header}>
@@ -41,53 +49,69 @@ export default class NongList extends Component {
           </View>
           {/* content */}
           <View style={styles.bigout}>
-
-            <View >
-              <Text style={styles.bigtitle}>大田作物种植</Text>
-              <View style={styles.everyitem}>
-                <TouchableOpacity onPress={() => Actions.nongdetail()} >
-                  <Text style={styles.everytitle}>机插水稻的早期田间管理技术</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => Actions.nongdetail()} >
-                  <Text style={styles.everytitle}>小麦返青后追肥要“三看”</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => Actions.nongdetail()} >
-                  <Text style={styles.everytitle}>洼地催芽种 玉米保全苗</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => Actions.nongdetail()} >
-                  <Text style={styles.everytitle}>洼地催芽种 玉米保全苗</Text>
-                </TouchableOpacity>
-              </View>
+            <Text style={styles.bigtitle}>大田作物种植</Text>
+            <View style={styles.everyitem}>
+              <ScrollView style={{ width: '100%', height: 190 * s }}>
+                {
+                  this.state.title1.map((item) => {
+                    return (
+                      <TouchableOpacity onPress={() => Actions.nongdetail(123)} >
+                        <Text style={styles.everytitle}>{item.Title}</Text>
+                      </TouchableOpacity>
+                    )
+                  })
+                }
+              </ScrollView>
             </View>
             <View>
               <Text style={styles.bigtitle}>蔬菜</Text>
               <View style={styles.everyitem}>
-                <Text style={styles.everytitle}>早春番茄育苗注意</Text>
-                <Text style={styles.everytitle}>如何培育可使蔬菜苗齐苗壮</Text>
-                <Text style={styles.everytitle}>夏季蔬菜育苗的注意事项</Text>
-                <Text style={styles.everytitle}>夏季蔬菜育苗的注意事项</Text>
+              <ScrollView style={{ width: '100%', height: 190 * s }}>
+                {
+                  this.state.title2.map((item) => {
+                    return (
+                      <TouchableOpacity onPress={() => Actions.nongdetail()}>
+                        <Text style={styles.everytitle}>{item.Title}</Text>
+                      </TouchableOpacity>
+                    )
+                  })
+                }
+              </ScrollView>
               </View>
             </View>
             <View>
               <Text style={styles.bigtitle}>果树</Text>
               <View style={styles.everyitem}>
-                <Text style={styles.everytitle}>葡萄科学补钙，提高果实品质</Text>
-                <Text style={styles.everytitle}>西瓜施硼产量高</Text>
-                <Text style={styles.everytitle}>草莓花果期的管理</Text>
-                <Text style={styles.everytitle}>草莓花果期的管理</Text>
+              <ScrollView style={{ width: '100%', height: 190 * s }}>
+                {
+                  this.state.title3.map((item) => {
+                    return (
+                      <TouchableOpacity onPress={() => Actions.nongdetail()} >
+                        <Text style={styles.everytitle}>{item.Title}</Text>
+                      </TouchableOpacity>
+                    )
+                  })
+                }
+              </ScrollView>
               </View>
             </View>
             <View>
               <Text style={styles.bigtitle}>中草药种植</Text>
               <View style={styles.everyitem}>
-                <Text style={styles.everytitle}>中草药繁育三种方法</Text>
-                <Text style={styles.everytitle}>药用植物甘草栽培技术</Text>
-                <Text style={styles.everytitle}>地黄种植技术</Text>
-                <Text style={styles.everytitle}>地黄种植技术</Text>
+              <ScrollView style={{ width: '100%', height: 190 * s }}>
+                {
+                  this.state.title4.map((item) => {
+                    return (
+                      <TouchableOpacity onPress={() => Actions.nongdetail()} >
+                        <Text style={styles.everytitle}>{item.Title}</Text>
+                      </TouchableOpacity>
+                    )
+                  })
+                }
+              </ScrollView>
               </View>
             </View>
           </View>
-        </ScrollView>
       </View>
     )
   }
@@ -123,7 +147,7 @@ const styles = StyleSheet.create({
   bigtitle: {
     color: 'rgb(4, 102, 69)',
     fontSize: 20,
-    marginBottom: 5 * s
+    marginBottom: 6 * s
   },
   everyitem: {
     width: '95%',
@@ -131,7 +155,7 @@ const styles = StyleSheet.create({
     marginBottom: 10 * s
   },
   everytitle: {
-    height: 50 * s,
+    height: 47 * s,
     borderBottomWidth: 1 / 2,
     borderBottomColor: 'rgb(139, 139, 139)',
     fontSize: 15,

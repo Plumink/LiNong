@@ -7,7 +7,6 @@ const s = width / 640;
 export default class NongDetails extends Component {
     constructor(props) {
         super(props);
-
     }
     render() {
 
