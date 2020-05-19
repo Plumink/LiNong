@@ -18,7 +18,6 @@ export default class NongList extends Component {
     fetch('http://175.24.100.139:8081/getNongyeTitle')
       .then(res => res.json())
       .then(res => {
-        console.log(res.slice(0, 30))
         this.setState({
           title1: res.slice(0, 30),
           title2: res.slice(30, 60),
@@ -53,9 +52,9 @@ export default class NongList extends Component {
             <View style={styles.everyitem}>
               <ScrollView style={{ width: '100%', height: 190 * s }}>
                 {
-                  this.state.title1.map((item) => {
+                  this.state.title1.map((item,index) => {
                     return (
-                      <TouchableOpacity onPress={() => Actions.nongdetail(123)} >
+                      <TouchableOpacity onPress={() => Actions.nongdetail({'title':item.Title,id:index})} >
                         <Text style={styles.everytitle}>{item.Title}</Text>
                       </TouchableOpacity>
                     )
@@ -68,9 +67,9 @@ export default class NongList extends Component {
               <View style={styles.everyitem}>
               <ScrollView style={{ width: '100%', height: 190 * s }}>
                 {
-                  this.state.title2.map((item) => {
+                  this.state.title2.map((item,index) => {
                     return (
-                      <TouchableOpacity onPress={() => Actions.nongdetail()}>
+                      <TouchableOpacity onPress={() => Actions.nongdetail({'title':item.Title,id:index})} >
                         <Text style={styles.everytitle}>{item.Title}</Text>
                       </TouchableOpacity>
                     )
@@ -84,9 +83,9 @@ export default class NongList extends Component {
               <View style={styles.everyitem}>
               <ScrollView style={{ width: '100%', height: 190 * s }}>
                 {
-                  this.state.title3.map((item) => {
+                  this.state.title3.map((item,index) => {
                     return (
-                      <TouchableOpacity onPress={() => Actions.nongdetail()} >
+                      <TouchableOpacity onPress={() => Actions.nongdetail({'title':item.Title,id:index})} >
                         <Text style={styles.everytitle}>{item.Title}</Text>
                       </TouchableOpacity>
                     )
@@ -100,9 +99,9 @@ export default class NongList extends Component {
               <View style={styles.everyitem}>
               <ScrollView style={{ width: '100%', height: 190 * s }}>
                 {
-                  this.state.title4.map((item) => {
+                  this.state.title4.map((item,index) => {
                     return (
-                      <TouchableOpacity onPress={() => Actions.nongdetail()} >
+                      <TouchableOpacity onPress={() => Actions.nongdetail({'title':item.Title,id:index})} >
                         <Text style={styles.everytitle}>{item.Title}</Text>
                       </TouchableOpacity>
                     )
