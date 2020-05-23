@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Text, View , Dimensions , StyleSheet,Image} from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { Text, View , Dimensions , StyleSheet,Image,TextInput} from 'react-native';
 import { Actions } from 'react-native-router-flux';
-
+import { ScrollView } from 'react-native';
 const {width} = Dimensions.get('window')
 
 export default class Fabu extends Component{
     render(){
         return(
             <View>
+                <ScrollView>
                 <View style={styles.head}>
                     <Text style={styles.lr} onPress={()=>Actions.pop()}>取消</Text>
                     <Text style={styles.title}>发布经验</Text>
@@ -21,6 +21,7 @@ export default class Fabu extends Component{
                         multiline
                     ></TextInput>
                 </View>
+                </ScrollView>
             </View>
         )
     }

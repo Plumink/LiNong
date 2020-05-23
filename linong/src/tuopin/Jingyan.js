@@ -7,6 +7,20 @@ const { width } = Dimensions.get('window')
 export default class Jingyan extends Component {
     constructor(){
         super()
+        this.state = {
+            test: [{ Title: 'aaa', Content: 'aaaa' }],
+        }
+
+    }
+    componentDidMount() {
+        fetch('http://175.24.100.139:8080/getExperience').then(res => res.json())
+            .then((res) => {
+                console.log(res)
+                this.setState({
+                    test: res
+                })
+            })
+        console.log(this.state.test)
     }
     render() {
         return (
@@ -20,6 +34,7 @@ export default class Jingyan extends Component {
                     <Text style={styles.l}>|</Text>
                     <Text style={styles.jy}>经验之谈</Text>
                 </View>
+                
                 <TouchableOpacity onPress={()=>Actions.jy()}>
                     <View style={styles.body}>
                         <View style={styles.yh}>
@@ -41,7 +56,7 @@ export default class Jingyan extends Component {
                             <Image style={{width:20,height:20,marginLeft:'50%',marginTop:16,top:-8}} source={require('../tu/j1.png')}/>
                             <Text style={styles.zi}>18</Text>
                             <Image style={{width:20,height:20,marginLeft:'3%',marginTop:16,top:-8}} source={require('../tu/j2.png')}/>
-                            <Text style={styles.zi}>18</Text>
+                            <Text style={styles.zi}>2</Text>
                             <Image style={{width:20,height:20,marginLeft:'3%',marginTop:16,top:-8}} source={require('../tu/j3.png')}/>
                             <Text style={styles.zi}>18</Text>
                             {/* <Text style={styles.iconStyle}>{'\ue8ad'}<Text style={styles.iconText}>点赞</Text></Text>
@@ -50,9 +65,11 @@ export default class Jingyan extends Component {
                         </View>
                     </View>
                     </TouchableOpacity>
+                    
                     <View style={{width:'100%',height:10,backgroundColor:'#F5F5F5'}}>
 
                     </View>
+                    <TouchableOpacity onPress={()=>Actions.jy1()}>
                     <View style={styles.body}>
                         <View style={styles.yh}>
                             <Image style={styles.touxiang} source={require('../tu/tou.jpg')}></Image>
@@ -77,22 +94,26 @@ export default class Jingyan extends Component {
                             <Text style={styles.iconStyle}>{'\ue613'}</Text> */}
                         </View>
                     </View>
+                    </TouchableOpacity>
                     <View style={{width:'100%',height:10,backgroundColor:'#F5F5F5'}}>
 
                     </View>
-            
-                <Button
+                    
+                    
+                <Button onPress={()=>Actions.fb()}
                     style={{
                         width: 60, height: 60,
                         borderRadius: 30,
                         textAlignVertical: 'center',
                         backgroundColor: 'red',
                         color: '#fff',
-                        marginLeft:'87%',
-                        top:'30%'
+                        marginLeft:'89%',
+                        right:'8%',
+                        top:'10%'
                     }}>
-                    +
+                    发布
                 </Button>
+                
                
                 
             </View>
@@ -167,13 +188,13 @@ const styles = StyleSheet.create({
         height: 150,
         borderWidth: 1,
         borderColor: 'white',
-        paddingLeft: 15,
+        
         top:3,
         paddingTop: 8
     },
     dibu: {
         marginLeft: width * 0.025,
-        width: width * 0.95,
+        width: '100%',
         height: 40,
         flexDirection: 'row',
         borderWidth: 2,

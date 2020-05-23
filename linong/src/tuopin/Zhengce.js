@@ -15,14 +15,16 @@ export default class Zhengce extends Component{
             <View style={{width:'100%',height:15,backgroundColor:'#F5F5F5',top:15}}>
 
             </View>
+            <TouchableOpacity onPress={()=>Actions.zc()}>
                 <View style={styles.box}>
                     <View style={styles.text}>
                         <Text style={styles.title}>【政策】2020年扶贫政策有哪些？</Text>
                         <Text numberOfLines={2} ellipsizeMode={'tail'} style={styles.content}>一、精准扶贫：根据不同地区的贫困状况...</Text>
                     </View>
-                    <Image style={styles.img} source = {require('./gris.jpg')}></Image>
+                    <Image style={styles.img} source = {require('../tu/z01.jpg')}></Image>
                     
                 </View>
+                </TouchableOpacity>
                 <View style={styles.zhuanti}>
                         <Text style={{color:'#FC5D3B',left:5,top:-2}}>专题</Text>
                     </View>
@@ -31,10 +33,10 @@ export default class Zhengce extends Component{
             </View>
                 <View style={styles.box}>
                     <View style={styles.text}>
-                        <Text style={styles.title}>【政策】2020年扶贫政策有哪些？</Text>
-                        <Text numberOfLines={2} ellipsizeMode={'tail'} style={styles.content}>一、精准扶贫：根据不同地区的贫困状况...</Text>
+                        <Text style={styles.title}>【政策】精准督战到户到人</Text>
+                        <Text numberOfLines={2} ellipsizeMode={'tail'} style={styles.content}>人民网玉林5月23日电 “阿叔，您家是什...</Text>
                     </View>
-                    <Image style={styles.img} source = {require('./gris.jpg')}></Image>
+                    <Image style={styles.img} source = {require('../tu/z02.jpg')}></Image>
                 </View>
                 <View style={styles.zhuanti}>
                         <Text style={{color:'#FC5D3B',left:5,top:-2}}>专题</Text>
@@ -44,10 +46,10 @@ export default class Zhengce extends Component{
             </View>
             <View style={styles.box}>
                     <View style={styles.text}>
-                        <Text style={styles.title}>【政策】2020年扶贫政策有哪些？</Text>
-                        <Text numberOfLines={2} ellipsizeMode={'tail'} style={styles.content}>一、精准扶贫：根据不同地区的贫困状况...</Text>
+                        <Text style={styles.title}>【政策】稳定精准扶贫政策</Text>
+                        <Text numberOfLines={2} ellipsizeMode={'tail'} style={styles.content}>“脱贫攻坚从决定性成就到全面胜利，面...</Text>
                     </View>
-                    <Image style={styles.img} source = {require('./gris.jpg')}></Image>
+                    <Image style={styles.img} source = {require('../tu/z03.jpg')}></Image>
                 </View>
                 <View style={styles.zhuanti}>
                         <Text style={{color:'#FC5D3B',left:5,top:-2}}>专题</Text>
@@ -75,10 +77,10 @@ const styles = StyleSheet.create({
         height:126,
     },
     img:{
-        width:'40%',
+        width:'35%',
         height:162,
         top:7,
-        left:-20
+        left:-28
     },
     title:{
         fontSize:17,

@@ -18,6 +18,11 @@ import HelpDetails from './src/home/HelpDetails';
 import Zhengce from './src/tuopin/Zhengce';
 import Jingyan from './src/tuopin/Jingyan';
 import Fupin from './src/tuopin/Fupin';
+import JingyanXQ from './src/tuopin/JingyanXQ';
+import Fabu from './src/tuopin/Fabu';
+import ZhengceXQ from './src/tuopin/ZhengceXQ';
+import JingyanXQ1 from './src/tuopin/JingyanXQ1';
+import KejiXQ from './src/tuopin/KejiXQ';
 console.disableYellowBox = true;
 const App = () => {
     return (
@@ -43,6 +48,7 @@ const App = () => {
                         <Scene key="mudetails" hideTabBar={true} hideNavBar={true} component={MuDetails} />
                         <Scene key="helpone" hideTabBar={true} hideNavBar={true} component={Help} />
                         <Scene key="helpDetails" hideTabBar={true} hideNavBar={true} component={HelpDetails} />
+
                     </Scene>
                     <Scene 
                         key='G'
@@ -55,7 +61,11 @@ const App = () => {
                         <Scene key='three' hideNavBar={true} component={Zhengce}/>
                         <Scene key='four' hideNavBar={true} component={Jingyan}/>
                         <Scene key='five' hideNavBar={true} component={Fupin}/>
-                        {/* <Scene key='jy' hideNavBar={true} component={JingyanXQ}/> */}
+                        <Scene key='jy' hideNavBar={true} component={JingyanXQ}/>
+                        <Scene key='jy1' hideNavBar={true} component={JingyanXQ1}/>
+                        <Scene key='fb' hideNavBar={true} component={Fabu}/>
+                        <Scene key='zc' hideNavBar={true} component={ZhengceXQ}/>
+                        <Scene key='kj' hideNavBar={true} component={KejiXQ}/>
                     </Scene>
                     <Scene 
                         key='S'
