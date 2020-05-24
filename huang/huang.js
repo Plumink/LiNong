@@ -65,7 +65,7 @@ app.post("/postExperience",function(req,res) {
     })
 })
 
-// 首页农业标题请求
+// 首页农业标题请求   ---qin
 app.get("/getNongyeTitle",function (req,res) {
     db.query("SELECT Title FROM Nongye", function (err, data) {
         if (err) {
@@ -76,7 +76,7 @@ app.get("/getNongyeTitle",function (req,res) {
         }
     })
 })
-// 首页农业详细内容请求
+// 首页农业详细内容请求   ---qin
 app.get("/getNongyeContent",function (req,res) {
     db.query("SELECT Content FROM Nongye where NongyeID = "+req.query.id, function (err, data) {
         if (err) {
@@ -86,6 +86,90 @@ app.get("/getNongyeContent",function (req,res) {
         }
     })
 })
+// 首页农业详细页图片URL请求   ---qin
+app.get("/getNongyeImgurl",function (req,res) {
+    db.query("SELECT ImgUrl FROM Nongye where NongyeID = "+req.query.id, function (err, data) {
+        if (err) {
+            console.log("数据库访问出错", err);
+        } else {
+            res.send(JSON.stringify(data));
+        }
+    })
+})
 
+// 获取水果类 ---Liu
+app.get("/getFruit",(req,res)=>{
+    db.query("SELECT * FROM shop_list where class='水果'",(err,data)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(JSON.stringify(data));
+        }
+    })
+})
 
-app.listen(8081);
+// 获取蔬菜类 ---Liu
+app.get("/getVeg",(req,res)=>{
+    db.query("SELECT * FROM shop_list where class='蔬菜'",(err,data)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(JSON.stringify(data));
+        }
+    })
+})
+
+// 获取种苗类 ---Liu
+app.get("/getTree",(req,res)=>{
+    db.query("SELECT * FROM shop_list where class='种苗'",(err,data)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(JSON.stringify(data));
+        }
+    })
+})
+
+// 获取畜牧类 ---Liu
+app.get("/getCow",(req,res)=>{
+    db.query("SELECT * FROM shop_list where class='畜牧'",(err,data)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(JSON.stringify(data));
+        }
+    })
+})
+
+// 获取水产类 ---Liu
+app.get("/getFish",(req,res)=>{
+    db.query("SELECT * FROM shop_list where class='水产'",(err,data)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(JSON.stringify(data));
+        }
+    })
+})
+
+//获取搜索商品结果 ---Liu
+app.get("/getSearch",(req,res)=>{
+    let search = req.query.searchRes;
+    console.log(req);
+    console.log(search);
+    db.query("SELECT * FROM shop_list where detail=?",[search],(err,data)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.send(data);
+        }
+    })
+})
+
+app.listen(8080);

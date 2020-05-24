@@ -69,7 +69,7 @@ export default class NongList extends Component {
                 {
                   this.state.title2.map((item,index) => {
                     return (
-                      <TouchableOpacity onPress={() => Actions.nongdetail({'title':item.Title,id:index})} >
+                      <TouchableOpacity onPress={() => Actions.nongdetail({'title':item.Title,id:index+30})} >
                         <Text style={styles.everytitle}>{item.Title}</Text>
                       </TouchableOpacity>
                     )
@@ -85,7 +85,7 @@ export default class NongList extends Component {
                 {
                   this.state.title3.map((item,index) => {
                     return (
-                      <TouchableOpacity onPress={() => Actions.nongdetail({'title':item.Title,id:index})} >
+                      <TouchableOpacity onPress={() => Actions.nongdetail({'title':item.Title,id:index+60})} >
                         <Text style={styles.everytitle}>{item.Title}</Text>
                       </TouchableOpacity>
                     )
@@ -101,7 +101,7 @@ export default class NongList extends Component {
                 {
                   this.state.title4.map((item,index) => {
                     return (
-                      <TouchableOpacity onPress={() => Actions.nongdetail({'title':item.Title,id:index})} >
+                      <TouchableOpacity onPress={() => Actions.nongdetail({'title':item.Title,id:index+90})} >
                         <Text style={styles.everytitle}>{item.Title}</Text>
                       </TouchableOpacity>
                     )
