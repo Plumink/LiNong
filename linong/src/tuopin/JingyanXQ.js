@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, Dimensions, StyleSheet, Image,TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { ScrollView } from 'react-native';
-
+import Button from 'react-native-button';
 const { width } = Dimensions.get('window')
 
 export default class Jingyan extends Component {
@@ -81,6 +81,22 @@ export default class Jingyan extends Component {
                         <View style={{width:'100%',height:2,backgroundColor:'#F6F6F6'}}>
 
                     </View>
+                    </View>
+                    <View>
+                    <Button onPress={()=>Actions.pl()}
+                    style={{
+                        width: 20, height: 80,
+                        borderRadius: 50,
+                        textAlignVertical: 'center',
+                        backgroundColor: 'red',
+                        color: '#fff',
+                        top:-20,
+                        marginLeft:'80%',
+                        
+                    
+                    }}>
+                    评论
+                </Button>
                     </View>
                 </ScrollView>
             </View>

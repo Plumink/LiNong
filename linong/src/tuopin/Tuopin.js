@@ -49,26 +49,36 @@ export default class Tuopin extends Component{
             <Image style={{width:'100%',height:250}} source={require('../tu/005.jpg')}/>
             </View>
         </TouchableOpacity>
+        <TouchableOpacity onPress={()=>Actions.xw()}>
         <View style={{width:'100%',height:100,backgroundColor:'white'}}>
-            <Text style={{fontSize:17,top:15}}>【扶贫热点】国务院联防联控机...</Text>
+            <Text style={{fontSize:17,top:15}}>【扶贫热点】精准施策推进就业...</Text>
             <Image style={{width:230,height:100,marginLeft:'58%',marginTop:-24}} source={require('../tu/006.jpg')}/>
         </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=>Actions.xw1()}>
         <View style={{width:'100%',height:100,marginTop:3,backgroundColor:'white'}}>
             <Text style={{fontSize:17,top:15}}>【扶贫热点】江西25个贫困县全...</Text>
             <Image style={{width:230,height:100,marginLeft:'58%',marginTop:-24}} source={require('../tu/t01.jpg')}/>
         </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=>Actions.xw2()}>
         <View style={{width:'100%',height:100,marginTop:3,backgroundColor:'white'}}>
             <Text style={{fontSize:17,top:15}}>【扶贫热点】就业扶贫“点对点”...</Text>
             <Image style={{width:230,height:100,marginLeft:'58%',marginTop:-24}} source={require('../tu/t02.jpg')}/>
         </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=>Actions.xw3()}>
         <View style={{width:'100%',height:100,marginTop:3,backgroundColor:'white'}}>
-            <Text style={{fontSize:17,top:15}}>【扶贫热点】紧紧依靠人民群众...</Text>
+            <Text style={{fontSize:17,top:15}}>【扶贫热点】打赢打好脱贫硬仗</Text>
             <Image style={{width:230,height:100,marginLeft:'58%',marginTop:-24}} source={require('../tu/t03.jpg')}/>
         </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=>Actions.xw4()}>
         <View style={{width:'100%',height:100,marginTop:3,backgroundColor:'white'}}>
             <Text style={{fontSize:17,top:15}}>【扶贫热点】扶贫路上那些事</Text>
             <Image style={{width:230,height:100,marginLeft:'58%',marginTop:-24}} source={require('../tu/t04.jpg')}/>
         </View>
+        </TouchableOpacity>
         </ScrollView>
         )
     }

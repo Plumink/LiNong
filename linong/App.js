@@ -23,6 +23,14 @@ import Fabu from './src/tuopin/Fabu';
 import ZhengceXQ from './src/tuopin/ZhengceXQ';
 import JingyanXQ1 from './src/tuopin/JingyanXQ1';
 import KejiXQ from './src/tuopin/KejiXQ';
+import Pinglun from './src/tuopin/Pinglun';
+import Xinwen from './src/tuopin/Xinwen';
+import Xinwen1 from './src/tuopin/Xinwen1';
+import Xinwen2 from './src/tuopin/Xinwen2';
+import Xinwen3 from './src/tuopin/Xinwen3';
+import Xinwen4 from './src/tuopin/Xinwen4';
+import KejiXQ1 from './src/tuopin/KejiXQ1';
+import KejiXQ2 from './src/tuopin/KejiXQ2';
 console.disableYellowBox = true;
 const App = () => {
     return (
@@ -66,6 +74,14 @@ const App = () => {
                         <Scene key='fb' hideNavBar={true} component={Fabu}/>
                         <Scene key='zc' hideNavBar={true} component={ZhengceXQ}/>
                         <Scene key='kj' hideNavBar={true} component={KejiXQ}/>
+                        <Scene key='pl' hideNavBar={true} component={Pinglun}/>
+                        <Scene key='xw' hideNavBar={true} component={Xinwen}/>
+                        <Scene key='xw1' hideNavBar={true} component={Xinwen1}/>
+                        <Scene key='xw2' hideNavBar={true} component={Xinwen2}/>
+                        <Scene key='xw3' hideNavBar={true} component={Xinwen3}/>
+                        <Scene key='xw4' hideNavBar={true} component={Xinwen4}/>
+                        <Scene key='kj1' hideNavBar={true} component={KejiXQ1}/>
+                        <Scene key='kj2' hideNavBar={true} component={KejiXQ2}/>
                     </Scene>
                     <Scene 
                         key='S'

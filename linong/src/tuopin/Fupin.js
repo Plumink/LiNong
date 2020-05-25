@@ -31,20 +31,22 @@ export default class Fupin extends Component{
                 <View style={{width:'100%',height:15,backgroundColor:'#F5F5F5',top:15}}>
 
             </View>
+            <TouchableOpacity onPress={()=>Actions.kj1()}>
                 <View style={styles.box}>
                     <View style={styles.text}>
                         <Text style={styles.title}>【科技扶贫】</Text>
-                        <Text numberOfLines={2} ellipsizeMode={'tail'} style={styles.content}>科技扶贫是由单纯救济式扶贫向依靠科学技术开发式扶贫转变
-                        的一个重要标志...</Text>
+                        <Text numberOfLines={2} ellipsizeMode={'tail'} style={styles.content}>2020年，扶贫攻坚进入最紧要的关头。《政府工作报告》中提出，脱贫是全面建成小康社会必须完成的硬</Text>
                     </View>
                     <Image style={styles.img} source = {require('../tu/k02.jpg')}></Image>
                 </View>
+                </TouchableOpacity>
                 <View style={styles.zhuanti}>
                         <Text style={{color:'#FC5D3B',left:5,top:-2}}>专题</Text>
                     </View>
                 <View style={{width:'100%',height:15,backgroundColor:'#F5F5F5',top:15}}>
 
             </View>
+            <TouchableOpacity onPress={()=>Actions.kj2()}>
             <View style={styles.box}>
                     <View style={styles.text}>
                         <Text style={styles.title}>【科技扶贫】</Text>
@@ -53,6 +55,7 @@ export default class Fupin extends Component{
                     </View>
                     <Image style={styles.img} source = {require('../tu/k03.jpg')}></Image>
                 </View>
+                </TouchableOpacity>
                 <View style={styles.zhuanti}>
                         <Text style={{color:'#FC5D3B',left:5,top:-2}}>专题</Text>
                     </View>
