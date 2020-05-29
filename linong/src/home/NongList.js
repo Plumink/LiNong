@@ -33,15 +33,17 @@ export default class NongList extends Component {
           <View style={styles.top}>
             <Icon color='black' name='left' onPress={Actions.pop} size={23} style={{ marginTop: 20 * s, marginRight: 30 * s }} />
             <View style={styles.header}>
+              
               <View style={styles.search}>
-                <TextInput
+                <Text style={{fontSize:20}}>农业</Text>
+                {/* <TextInput
                   placeholder='请搜索你想获得的信息'
                   style={{
                     width: '70%',
                     paddingLeft: 10 * s,
                     marginRight: 140 * s
                   }} />
-                <Icon color='gray' name='search1' size={20} />
+                <Icon color='gray' name='search1' size={20} /> */}
               </View>
             </View>
             <View style={{ width: '10%' }}></View>
@@ -129,11 +131,9 @@ const styles = StyleSheet.create({
   header: {
     height: 60 * s,
     width: '75%',
-    borderBottomWidth: 1 / 2,
-    borderBottomColor: 'black'
   },
   search: {
-    height: 60 * s,
+    height: 70 * s,
     width: '80%',
     flexDirection: 'row',
     alignItems: 'center'
