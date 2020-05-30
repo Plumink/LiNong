@@ -10,8 +10,7 @@ export default class NongDetails extends Component {
         this.state = {
             id: this.props.id,
             title: this.props.title,
-            content: [],
-            imgUrl:''
+            content: []
         }
     }
 
@@ -19,23 +18,14 @@ export default class NongDetails extends Component {
         fetch('http://175.24.100.139:8081/getNongyeContent?id=' + this.state.id)
             .then(res => res.json())
             .then(res => {
+                console.log('777777')
                 var contentarr = res[0].Content.split(res[0].Content[0] + res[0].Content[1]);
-                // console.log(contentarr.length)
-                // for (var i = 0; i < contentarr.length; i++) {
-                //     console.log(contentarr[i])
-                // }
+                console.log(contentarr.length)
+                for (var i = 0; i < contentarr.length; i++) {
+                    console.log(contentarr[i])
+                }
                 this.setState({
                     content: contentarr
-                });
-            });
-        fetch('http://175.24.100.139:8081/getNongyeImgurl?id=' + this.state.id)
-            .then(res => res.json())
-            .then(res => {
-                console.log('777777')
-                // console.log(res);
-                console.log(res[0].ImgUrl);
-                this.setState({
-                    imgUrl: res[0].ImgUrl
                 });
             });
     }
@@ -45,6 +35,7 @@ export default class NongDetails extends Component {
         return (
             <View style={{ flex: 1, backgroundColor: 'rgba(234, 255, 236, 0.712)', width: '100%' }} hideTabBar={true}>
                 {/* top */}
+                {/* <ScrollView> */}
                 <View style={styles.top}>
                     <Icon color='black' name='left' onPress={Actions.pop} size={23} style={{ marginTop: 20 * s, marginRight: 10 * s }} />
                     <Text style={styles.header}>{this.state.title}</Text>
@@ -69,7 +60,7 @@ export default class NongDetails extends Component {
                         </TouchableOpacity>
                     </View>
                     <Image
-                        source={{uri:this.state.imgUrl}}
+                        source={require('../img/jicha.png')}
                         style={{
                             height: 300 * s,
                             width: 520 * s,
@@ -83,7 +74,11 @@ export default class NongDetails extends Component {
                             )
                         })
                     }
+                    {/* <Text style={styles.article}>&nbsp;&nbsp;{this.state.content}</Text> */}
+
+
                 </ScrollView>
+                {/* </ScrollView> */}
             </View>
         )
     }

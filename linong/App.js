@@ -20,6 +20,7 @@ import Jingyan from './src/tuopin/Jingyan';
 import Fupin from './src/tuopin/Fupin';
 import JingyanXQ from './src/tuopin/JingyanXQ';
 import Fabu from './src/tuopin/Fabu';
+//---tuopin
 import ZhengceXQ from './src/tuopin/ZhengceXQ';
 import JingyanXQ1 from './src/tuopin/JingyanXQ1';
 import KejiXQ from './src/tuopin/KejiXQ';
@@ -31,6 +32,16 @@ import Xinwen3 from './src/tuopin/Xinwen3';
 import Xinwen4 from './src/tuopin/Xinwen4';
 import KejiXQ1 from './src/tuopin/KejiXQ1';
 import KejiXQ2 from './src/tuopin/KejiXQ2';
+//---shangcheng
+import GoodsFruit from './src/goods/GoodsFruit';
+import GoodsSearch from './src/goods/GoodsSearch';
+import GoodsVeg from './src/goods/GoodsVeg';
+import GoodsTree from './src/goods/GoodsTree';
+import GoodsCow from './src/goods/GoodsCow';
+import GoodsFish from './src/goods/GoodsFish';
+import GoodsDetail1 from './src/goods/GoodsDetail1';
+//---wode 
+import Sale from './src/user/Sale';
 console.disableYellowBox = true;
 const App = () => {
     return (
@@ -56,7 +67,6 @@ const App = () => {
                         <Scene key="mudetails" hideTabBar={true} hideNavBar={true} component={MuDetails} />
                         <Scene key="helpone" hideTabBar={true} hideNavBar={true} component={Help} />
                         <Scene key="helpDetails" hideTabBar={true} hideNavBar={true} component={HelpDetails} />
-
                     </Scene>
                     <Scene 
                         key='G'
@@ -82,6 +92,7 @@ const App = () => {
                         <Scene key='xw4' hideNavBar={true} component={Xinwen4}/>
                         <Scene key='kj1' hideNavBar={true} component={KejiXQ1}/>
                         <Scene key='kj2' hideNavBar={true} component={KejiXQ2}/>
+                        {/* <Scene key='jy' hideNavBar={true} component={JingyanXQ}/> */}
                     </Scene>
                     <Scene 
                         key='S'
@@ -90,14 +101,22 @@ const App = () => {
                         icon={({ focused }) => <Icon1 size={25} color={focused ? 'rgb(242,48,48)' : 'rgb(151,151,151)'} name='shopping-cart' />}
                     >
                         <Scene key='shop' hideNavBar={true} component={Goods}/>
+                        <Scene key='fruit' hideNavBar={true} component={GoodsFruit}/>
+                        <Scene key='veg' hideNavBar={true} component={GoodsVeg}/>
+                        <Scene key='tree' hideNavBar={true} component={GoodsTree}/>
+                        <Scene key='cow' hideNavBar={true} component={GoodsCow}/>
+                        <Scene key='fish' hideNavBar={true} component={GoodsFish}/>
+                        <Scene key='search' hideNavBar={true} component={GoodsSearch}/>
+                        <Scene key='detail' hideNavBar={true} component={GoodsDetail1}/>
                     </Scene>
                     <Scene 
-                        key='mine'
+                        key='M'
                         title='我的'
                         hideNavBar
                         icon={({ focused }) => <Icon size={25} color={focused ? 'rgb(242,48,48)' : 'rgb(151,151,151)'} name='user' />}
-                        component={User} 
                     >
+                        <Scene key='U' hideNavBar={true} component={User}/>
+                        <Scene key='one' hideNavBar={true} component={Sale}/>
                     </Scene>
                 </Tabs>
             </Overlay> 
@@ -111,100 +130,3 @@ export default App;
 
 
 
-// import React,{Component} from 'react';
-// import { View, Text, Dimensions,StyleSheet } from 'react-native';
-
-
-// const {width, scale} = Dimensions.get('window');
-// /** 450   2 */
-// const s = width / 640;
-
-// const App = () => {
-//     return (
-//         <View style={{backgroundColor:'white',flex:1}}>
-//             {/* 状态栏 */}
-            
-//             <View style={styles.header}>
-//                 <Text>搜索、定位</Text>
-//             </View>
-//             <View>
-//               <Text style={styles.weather}>天气</Text>
-//             </View>
-//             <View style={styles.content}>
-//               <View style={styles.nongye}>
-//                 <Text>农业</Text>
-//               </View>
-//               <View style={styles.contentR}>
-//                 <View style={styles.muye}>
-//                   <Text>牧业</Text>
-//                 </View>
-//                 <View style={styles.bangshou}>
-//                   <Text>找帮手</Text>
-//                 </View>
-//               </View>
-//             </View>
-//             <View style={styles.hangqing}>
-//               <Text>轮播图、行情</Text>
-//             </View>
-//         </View>
-//     )
-// }
-// export default App;
-// const styles = StyleSheet.create({
-//     header:{
-//         height: 70*s,
-//         borderWidth:1,
-//         borderColor:'#e8e8e8',
-//         justifyContent:'center',
-//         alignItems:'center'
-//     },
-//     weather:{
-//       width:'95%',
-//       height:80*s,
-//       backgroundColor:'blue',
-//       margin:20*s,
-//       borderRadius:20*s
-//     },
-//     content:{
-//       width:'100%',
-//       height:400*s,
-//       borderWidth:1,
-//       borderColor:'red',
-//       alignItems:'center',
-//       flexDirection:'row',
-//       marginBottom:20*s
-//     },
-//     contentR:{
-//       width:'100%',
-//       flexDirection:'column',
-//     },
-//     nongye:{
-//       width:'50%',
-//       height:400*s,
-//       borderWidth:1,
-//       borderColor:'black',
-//       justifyContent:'center'
-//     },
-//     muye:{
-//       width:'50%',
-//       height:190*s,
-//       borderWidth:1,
-//       borderColor:'green',
-//       justifyContent:'center',
-//       marginBottom:20*s
-//     },
-//     bangshou:{
-//       width:'50%',
-//       height:190*s,
-//       borderWidth:1,
-//       borderColor:'orange',
-//       justifyContent:'center'
-//     },
-//     hangqing:{
-//       width:'100%',
-//       height:180*s,
-//       borderWidth:1,
-//       borderColor:'blue',
-//     }
-    
-// })

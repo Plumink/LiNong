@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
-import { View, Text, Dimensions,StyleSheet, ScrollView, ImageBackground, Image } from 'react-native';
+import { View, Text, Dimensions,StyleSheet, ScrollView, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import { WhiteSpace, WingBlank } from '@ant-design/react-native';
+import { Actions } from 'react-native-router-flux';
 
 const {width, scale} = Dimensions.get('window');
 /** 450   2 */
@@ -33,7 +34,8 @@ export default class User extends Component{
                             <Text>我要发布</Text>
                             <View style={styles.square}>
                                 <View>
-                                    <Text style={[styles.iconStyle,{color:'red',}]}>{'\ue620'}</Text>
+                                    {/* <TouchableOpacity ></TouchableOpacity> */}
+                                    <Text onPress={()=>Actions.one()} style={[styles.iconStyle,{color:'red',}]}>{'\ue620'}</Text>
                                     <Text>   卖货</Text>
                                 </View>
                                 <View style={styles.square_child}>
@@ -106,14 +108,14 @@ const styles = StyleSheet.create({
         borderRadius: 50,
     },
     img1_name: {
-        width: 80*s,
+        width: 150*s,
         color: 'white',
         position: 'absolute',
         left: 80*s,
         top:15*s
     },
     img1_name2: {
-        width: 100*s,
+        width: 150*s,
         color: 'white',
         position: 'absolute',
         left: 80*s,
