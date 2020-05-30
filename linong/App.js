@@ -10,6 +10,7 @@ import Goods from './src/goods/Goods';
 import User from './src/user/User';
 import NongList from './src/home/NongList';
 import Nongdetail from './src/home/NongDetail';
+import NongyeSearch from './src/home/NongyeSearch';
 import News from './src/tuopin/News';
 import MuList from './src/home/MuList';
 import Help from './src/home/Help';
@@ -63,6 +64,7 @@ const App = () => {
                         <Scene key='home'  hideNavBar={true} component={Home}/>
                         <Scene key="nonglist" hideTabBar={true} hideNavBar={true} component={NongList} />
                         <Scene key='nongdetail' hideTabBar={true} hideNavBar={true} component={Nongdetail}/>
+                        <Scene key='nongsearch' hideNavBar={true} component={NongyeSearch}/>
                         <Scene key="mulist" hideTabBar={true} hideNavBar={true} component={MuList} />
                         <Scene key="mudetails" hideTabBar={true} hideNavBar={true} component={MuDetails} />
                         <Scene key="helpone" hideTabBar={true} hideNavBar={true} component={Help} />
