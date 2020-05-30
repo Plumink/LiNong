@@ -12,7 +12,48 @@ const s = width / 640;
 
 export default class Home extends Component{
     constructor(){
-      super()
+      super();
+      this.state = {
+        xiaolongxia:[],
+        taozi:[],
+        qitashoplist1:[],
+        qitashoplist2:[],
+        qitashoplist3:[],
+        qitashoplist4:[],
+      }
+    }
+
+    componentDidMount(){
+      fetch('http://175.24.100.139:8081/xiaolongxia')
+            .then(res => res.json())
+            .then(res => {
+              // console.log(1)
+              // console.log(res[0])
+              this.setState({
+                xiaolongxia: res[0]
+              });
+            });
+      fetch('http://175.24.100.139:8081/taozi')
+            .then(res => res.json())
+            .then(res => {
+              // console.log(2)
+              // console.log(res[0])
+              this.setState({
+                taozi: res[0]
+              });
+            });
+      fetch('http://175.24.100.139:8081/qitashoplist')
+            .then(res => res.json())
+            .then(res => {
+              // console.log(3)
+              // console.log(res)
+              this.setState({
+                qitashoplist1: res[0],
+                qitashoplist2: res[1],
+                qitashoplist3: res[2],
+                qitashoplist4: res[3]
+              });
+            });
     }
 
     render(){
@@ -23,10 +64,9 @@ export default class Home extends Component{
             
             <View style={styles.header}>
               <Geolocation/>
-              <TextInput style={styles.inp} placeholder="请输入商品名称" placeholderTextColor="#808080"/>
-            </View>
-            <View style={styles.weather}>
-              <Weather />
+              <View style={styles.weather}>
+                <Weather />
+              </View>
             </View>
             <View style={styles.content}>
             <TouchableOpacity onPress={() => Actions.nonglist()} style={styles.nongye}>
@@ -46,16 +86,16 @@ export default class Home extends Component{
                   <Text style={styles.titm}>牧业</Text>
                   <Text style={styles.tit2}>小知识，帮你高效养殖</Text>
                   <View style={styles.content3}>
-                    <Image source={require('../img/my.png')} style={styles.img1}/>
-                    <Image source={require('../img/my1.png')} style={styles.img1}/>
+                    <Image source={require('../img/my.png')} style={styles.img12}/>
+                    <Image source={require('../img/my1.png')} style={styles.img12}/>
                   </View>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => Actions.helpone()} style={styles.bangshou}>
                   <Text style={styles.titz}>找帮手</Text>
                   <Text style={styles.tit2}>大型农机帮忙</Text>
                   <View style={styles.content3}>
-                    <Image source={require('../img/bs.png')} style={styles.img1}/>
-                    <Image source={require('../img/bs1.png')} style={styles.img1}/>
+                    <Image source={require('../img/bs.png')} style={styles.img12}/>
+                    <Image source={require('../img/bs1.png')} style={styles.img12}/>
                   </View>
               </TouchableOpacity>
               </View>
@@ -76,41 +116,55 @@ export default class Home extends Component{
                 <Image source={require('../img/lb2.png')} style={styles.imgLb}/>
                 <Image source={require('../img/lb3.png')} style={styles.imgLb}/>
                 <Image source={require('../img/lb4.png')} style={styles.imgLb}/>
-                
-
             </Swiper>
             <View style={styles.tit3}>
               <View style={styles.fangkuai}></View>
               <Text style={styles.txt5}>广告信息</Text>
-              <Text style={styles.txt6}>更多</Text>
+              <TouchableOpacity onPress={() => Actions.shop()} style={styles.txt6}>
+                <Text>更多</Text>
+              </TouchableOpacity>
             </View>
             <View style={styles.guanggao}>
-              <View style={styles.gg1}>
-                <Image source={require('../img/gg.png')} style={styles.img2}/>
-                <Text style={styles.txt2}>蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜</Text>
-                <Text style={styles.txt3}>36.00/斤</Text>
-                <Text style={styles.txt4}>江苏</Text>
-              </View>
-              <View style={styles.gg2}>
-                <Image source={require('../img/gg.png')} style={styles.img2}/>
-                  <Text style={styles.txt2}>蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜</Text>
-                  <Text style={styles.txt3}>36.00/斤</Text>
-                  <Text style={styles.txt4}>江苏</Text>
-              </View>
+              <TouchableOpacity style={styles.gg1}>
+                <Image source={{uri:this.state.xiaolongxia.imgs}} style={styles.img2}/>
+                <Text style={styles.txt2}>{this.state.xiaolongxia.title}</Text>
+                <Text style={styles.txt3}>{this.state.xiaolongxia.money}</Text>
+                <Text style={styles.txt4}>{this.state.xiaolongxia.address}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.gg1}>
+                <Image source={{uri:this.state.taozi.imgs}} style={styles.img2}/>
+                <Text style={styles.txt2}>{this.state.taozi.title}</Text>
+                <Text style={styles.txt3}>{this.state.taozi.money}</Text>
+                <Text style={styles.txt4}>{this.state.taozi.address}</Text>
+              </TouchableOpacity>
             </View>
             <View style={styles.guanggao}>
-              <View style={styles.gg1}>
-                <Image source={require('../img/gg.png')} style={styles.img2}/>
-                <Text style={styles.txt2}>蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜</Text>
-                <Text style={styles.txt3}>36.00/斤</Text>
-                <Text style={styles.txt4}>江苏</Text>
-              </View>
-              <View style={styles.gg2}>
-                <Image source={require('../img/gg.png')} style={styles.img2}/>
-                  <Text style={styles.txt2}>蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜蔬菜</Text>
-                  <Text style={styles.txt3}>36.00/斤</Text>
-                  <Text style={styles.txt4}>江苏</Text>
-              </View>
+              <TouchableOpacity style={styles.gg1}>
+                <Image source={{uri:this.state.qitashoplist1.imgs}} style={styles.img2}/>
+                <Text style={styles.txt2}>{this.state.qitashoplist1.title}</Text>
+                <Text style={styles.txt3}>{this.state.qitashoplist1.money}</Text>
+                <Text style={styles.txt4}>{this.state.qitashoplist1.address}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.gg1}>
+                <Image source={{uri:this.state.qitashoplist2.imgs}} style={styles.img2}/>
+                <Text style={styles.txt2}>{this.state.qitashoplist2.title}</Text>
+                <Text style={styles.txt3}>{this.state.qitashoplist2.money}</Text>
+                <Text style={styles.txt4}>{this.state.qitashoplist2.address}</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.guanggao}>
+              <TouchableOpacity style={styles.gg1}>
+                <Image source={{uri:this.state.qitashoplist3.imgs}} style={styles.img2}/>
+                <Text style={styles.txt2}>{this.state.qitashoplist3.title}</Text>
+                <Text style={styles.txt3}>{this.state.qitashoplist3.money}</Text>
+                <Text style={styles.txt4}>{this.state.qitashoplist3.address}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.gg1}>
+                <Image source={{uri:this.state.qitashoplist4.imgs}} style={styles.img2}/>
+                <Text style={styles.txt2}>{this.state.qitashoplist4.title}</Text>
+                <Text style={styles.txt3}>{this.state.qitashoplist4.money}</Text>
+                <Text style={styles.txt4}>{this.state.qitashoplist4.address}</Text>
+              </TouchableOpacity>
             </View>
         </View>
         </ScrollView>
@@ -120,11 +174,12 @@ export default class Home extends Component{
 
 const styles = StyleSheet.create({
     header:{
-        height: 80*s,
+        height: 85*s,
         backgroundColor:'#33cc33',
         justifyContent:'center',
         alignItems:'center',
         flexDirection:'row',
+        marginBottom:15*s
     },
     
     inp:{
@@ -139,12 +194,8 @@ const styles = StyleSheet.create({
     },
     weather:{
       width:'90%',
-      height:90*s,
-      backgroundColor:'skyblue',
-      margin:20*s,
-      borderRadius:20*s,
-      left:10,
-      
+      height:85*s,
+      margin:20*s,  
     },
     content:{
       width:'100%',
@@ -215,7 +266,11 @@ const styles = StyleSheet.create({
     img1:{ 
       width:75,
       height:75,
-      // top:10,
+      marginLeft:10
+    },
+    img12:{ 
+      width:75,
+      height:75,
       marginLeft:15
     },
     content1:{
@@ -228,10 +283,9 @@ const styles = StyleSheet.create({
     content2:{
       flexDirection:'row',
       top:25,
-      // borderWidth:3,
       width:200,
       height:90,
-      alignItems:'center',
+      alignItems:'center'
     },
     content3:{
       flexDirection:'row',
@@ -269,7 +323,7 @@ const styles = StyleSheet.create({
     txt6:{
       fontSize:13,
       color:'#999999',
-      left:350,
+      left:450*s,
       top:5
     },
     guanggao:{
@@ -280,41 +334,35 @@ const styles = StyleSheet.create({
       marginTop:12,
   },
   gg1:{
-      flex:1,
-      backgroundColor:'white',
-      borderWidth:2,
-      borderRadius:5,
-      borderColor:'#d9d9d9'
-  },
-  gg2:{
-      flex:1,
-      backgroundColor:'white',
-      marginLeft:10,
-      borderWidth:1,
-      borderRadius:5,
-      borderColor:'#d9d9d9'
+    flex:1,
+    backgroundColor:'white',
+    marginLeft:5,
+    marginRight:5,
+    borderWidth:1,
+    borderRadius:5,
+    borderColor:'#d9d9d9'
   },
   img2:{
-    marginLeft:20,
-    width:170,
-    height:150
+    marginLeft:10*s,
+    width:260*s,
+    height:260*s,  
 },
 txt2:{
     color:'gray',
     fontSize:14,
     paddingLeft:5,
-    paddingTop:13
+    paddingTop:5*s
 },
 txt3:{
     color:'red',
     fontSize:14,
-    paddingTop:10,
+    paddingTop:5,
     paddingLeft:5
 },
 txt4:{
   color:'black',
   fontSize:14,
-  left:155
+  left:120
 },
     
 })

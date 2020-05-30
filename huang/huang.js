@@ -96,6 +96,82 @@ app.get("/getNongyeImgurl",function (req,res) {
         }
     })
 })
+// 首页广告部分请求shop_list数据   ---qin
+// 小龙虾    ---qin
+app.get("/xiaolongxia",function (req,res) {
+    db.query("SELECT * FROM shop_list where id = 5", function (err, data) {
+        if (err) {
+            console.log("数据库访问出错", err);
+        } else {
+            res.send(JSON.stringify(data));
+        }
+    })
+})
+// 桃子    ---qin
+app.get("/taozi",function (req,res) {
+    db.query("SELECT * FROM shop_list where id = 25", function (err, data) {
+        if (err) {
+            console.log("数据库访问出错", err);
+        } else {
+            res.send(JSON.stringify(data));
+        }
+    })
+})
+// 其他    ---qin
+// 2:冬瓜； 7:蓝莓； 9:西瓜； 11:土豆； 
+app.get("/qitashoplist",function (req,res) {
+    db.query("SELECT * FROM shop_list where id in (2,7,9,11)", function (err, data) {
+        if (err) {
+            console.log("数据库访问出错", err);
+        } else {
+            res.send(JSON.stringify(data));
+        }
+    })
+})
+// 农业根据关键词进行查询   ---qin
+app.get("/nongyesearch",function (req,res) {
+    console.log(req.query.key);
+    var key = req.query.key;
+    db.query("SELECT * FROM Nongye where SearchName = ?", [key], function (err, data) {
+        if (err) {
+            console.log("数据库访问出错", err);
+        } else {
+            res.send(JSON.stringify(data));
+        }
+    })
+})
+
+// 首页牧业标题请求   ---mu
+app.get("/getMuyeTitle",function (req,res) {
+    db.query("SELECT Title FROM Muye", function (err, data) {
+        if (err) {
+            console.log("数据库访问出错", err);
+        } else {
+            console.log(req.query.a);
+            res.send(JSON.stringify(data));
+        }
+    })
+})
+// 首页牧业详细内容请求   ---mu
+app.get("/getMuyeContent",function (req,res) {
+    db.query("SELECT Content FROM Muye where MuyeID = "+req.query.id, function (err, data) {
+        if (err) {
+            console.log("数据库访问出错", err);
+        } else {
+            res.send(JSON.stringify(data));
+        }
+    })
+})
+// 首页牧业详细页图片URL请求   ---mu
+app.get("/getMuyeImgurl",function (req,res) {
+    db.query("SELECT ImgUrl FROM Muye where MuyeID = "+req.query.id, function (err, data) {
+        if (err) {
+            console.log("数据库访问出错", err);
+        } else {
+            res.send(JSON.stringify(data));
+        }
+    })
+})
 
 // 获取水果类 ---Liu
 app.get("/getFruit",(req,res)=>{
@@ -172,4 +248,4 @@ app.get("/getSearch",(req,res)=>{
     })
 })
 
-app.listen(8080);
+app.listen(8081);

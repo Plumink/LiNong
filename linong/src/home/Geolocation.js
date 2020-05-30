@@ -35,7 +35,7 @@ export default class Geolocation extends Component {
     }
     render() {
         return (
-            <View style={{width:'10%',height:60*s,marginLeft:-30}}>
+            <View style={{width:'10%',height:60*s,marginLeft:10,marginRight:-30}}>
                 {/* <Text style={{lineHeight:60*s}}>{this.state.city}</Text> */}
                 <Text style={{lineHeight:60*s}}>张家口</Text>
             </View>
