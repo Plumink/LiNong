@@ -125,13 +125,17 @@ export default class Home extends Component{
               </TouchableOpacity>
             </View>
             <View style={styles.guanggao}>
-              <TouchableOpacity style={styles.gg1}>
+              <TouchableOpacity style={styles.gg1} 
+                onPress={() => {Actions.homeGoodsDetail2();}}
+              >
                 <Image source={{uri:this.state.xiaolongxia.imgs}} style={styles.img2}/>
                 <Text style={styles.txt2}>{this.state.xiaolongxia.title}</Text>
                 <Text style={styles.txt3}>{this.state.xiaolongxia.money}</Text>
                 <Text style={styles.txt4}>{this.state.xiaolongxia.address}</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.gg1}>
+              <TouchableOpacity style={styles.gg1}
+                onPress={() => {Actions.homeGoodsDetail3();}}
+              >
                 <Image source={{uri:this.state.taozi.imgs}} style={styles.img2}/>
                 <Text style={styles.txt2}>{this.state.taozi.title}</Text>
                 <Text style={styles.txt3}>{this.state.taozi.money}</Text>
@@ -366,3 +370,4 @@ txt4:{
 },
     
 })
+

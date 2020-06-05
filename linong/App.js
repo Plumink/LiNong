@@ -11,6 +11,8 @@ import User from './src/user/User';
 import NongList from './src/home/NongList';
 import Nongdetail from './src/home/NongDetail';
 import NongyeSearch from './src/home/NongyeSearch';
+import HomeGoodsDetail2 from './src/home/HomeGoodsDetail2';
+import HomeGoodsDetail3 from './src/home/HomeGoodsDetail3';
 import News from './src/tuopin/News';
 import MuList from './src/home/MuList';
 import Help from './src/home/Help';
@@ -62,6 +64,8 @@ const App = () => {
                         icon={({ focused }) => <Icon size={25} color={focused ? 'rgb(242,48,48)' : 'rgb(151,151,151)'} name='home' />}
                     >
                         <Scene key='home'  hideNavBar={true} component={Home}/>
+                        <Scene key="homeGoodsDetail2" hideTabBar={true} hideNavBar={true} component={HomeGoodsDetail2} />
+                        <Scene key="homeGoodsDetail3" hideTabBar={true} hideNavBar={true} component={HomeGoodsDetail3} />
                         <Scene key="nonglist" hideTabBar={true} hideNavBar={true} component={NongList} />
                         <Scene key='nongdetail' hideTabBar={true} hideNavBar={true} component={Nongdetail}/>
                         <Scene key='nongsearch' hideNavBar={true} component={NongyeSearch}/>

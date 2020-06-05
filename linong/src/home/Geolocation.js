@@ -18,13 +18,13 @@ export default class Geolocation extends Component {
     componentDidMount() {
         geolocation.getCurrentPosition(
             location => {
-                console.log('success');
-                console.log(location.coords.latitude);
-                console.log(location.coords.longitude);    
+                // console.log('success');
+                // console.log(location.coords.latitude);
+                // console.log(location.coords.longitude);    
                 fetch('http://api.map.baidu.com/reverse_geocoding/v3/?ak=C11a1glnS4HZ9tGQQHbTV3klRc9Gx8Hr&output=json&coordtype=wgs84ll&location='+location.coords.latitude+','+location.coords.longitude)
                     .then((res)=>res.json())
                     .then((res)=>{
-                        console.log(res)
+                        // console.log(res)
                     })
             },
             error => {

@@ -19,7 +19,7 @@ export default class NongDetails extends Component {
         fetch('http://175.24.100.139:8081/getNongyeContent?id=' + this.state.id)
             .then(res => res.json())
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 var contentarr = res[0].Content.split(res[0].Content[0] + res[0].Content[1]);
                 // console.log(contentarr.length)
                 // for (var i = 0; i < contentarr.length; i++) {
@@ -32,9 +32,9 @@ export default class NongDetails extends Component {
         fetch('http://175.24.100.139:8081/getNongyeImgurl?id=' + this.state.id)
             .then(res => res.json())
             .then(res => {
-                console.log('777777')
-                // console.log(res);
-                console.log(res[0].ImgUrl);
+                // console.log('777777')
+                // // console.log(res);
+                // console.log(res[0].ImgUrl);
                 this.setState({
                     imgUrl: res[0].ImgUrl
                 });
